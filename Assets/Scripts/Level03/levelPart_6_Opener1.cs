@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class levelPart_6_Opener1 : MonoBehaviour
+{
+    [SerializeField] private GameObject openLevel;
+    // Start is called before the first frame update
+    void Start()
+    {
+        openLevel.SetActive(false);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+       
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 6)
+        {
+            openLevel.SetActive(true);
+            Destroy(gameObject);
+        }
+    }
+}
